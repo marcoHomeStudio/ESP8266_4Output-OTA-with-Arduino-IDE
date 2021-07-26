@@ -1,0 +1,56 @@
+<!DOCTYPE HTML><html>
+<head>
+  <title>ESP IOT DASHBOARD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="icon"  type="image/png" href="favicon.ico">
+  
+</head>
+<body>
+  <div class="topnav">
+    <h1>ESP-01 - 4 output module</h1>
+	<button class="button" onclick="logoutButton()">Logout</button>
+	<button class="button" onclick="update()">Update</button>
+  </div>
+
+  <div class="content">
+    <div class="card-grid">
+        <div class="card">             
+            <p class="card-title"> output 1</p>
+            <label class="switch">
+                <input type="checkbox" onchange="toggleCheckbox(this)" id="0">
+                <span class="slider"></span>
+            </label>
+            <p class ="state">State: <span id="0s"></span></p>
+        </div>
+        <div class="card">
+            <p class="card-title"> output 2</p>
+            <label class="switch">
+                <input type="checkbox" onchange="toggleCheckbox(this)" id="1">
+                <span class="slider"></span>
+            </label>
+            <p class ="state">State: <span id="1s"></span></p>
+        </div>
+        <div class="card">
+            <p class="card-title"> output 3</p>
+            <label class="switch">
+                <input type="checkbox" onchange="toggleCheckbox(this)" id="2">
+                <span class="slider"></span>
+            </label>
+            <p class ="state">State: <span id="2s"></span></p>
+        </div>
+        <div class="card">
+            <p class="card-title"> output4</p>
+            <label class="switch">
+                <input type="checkbox" onchange="toggleCheckbox(this)" id="3">
+                <span class="slider"></span>
+            </label>
+            <p class="state">State: <span id="3s"></span></p>
+        </div>
+    </div>
+</div>
+<script src="/script.js"></script>
+</body>
+</html>
+
+
