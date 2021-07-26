@@ -7,8 +7,8 @@
 #include <AsyncElegantOTA.h>
 
 // Replace with your network credentials
-const char* ssid = "cubadakrestaurant";
-  const char* password = "c17u10b1967a07d12a19";
+const char* ssid = "***************";
+  const char* password = "*************";
   const char* http_username = "admin";
   const char* http_password = "admin";
   // Create AsyncWebServer object on port 80
