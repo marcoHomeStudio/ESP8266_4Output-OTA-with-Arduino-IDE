@@ -1,4 +1,4 @@
-<h1># ESP8266_OTA</h1>
+<h1><span style="text-decoration: underline;"># ESP8266_OTA</span></h1>
 <h2>DEV platform with OTA based on ESP8266-01</h2>
 <p>Dev platform on esp8266-01 with the 4 gpio pin activatd and OTA functionalities. Web app intervface with Async web serever. The ewb server html and css and js file are stored in the Data directory</p>
 <p>The folowing libraries must be installed:</p>
