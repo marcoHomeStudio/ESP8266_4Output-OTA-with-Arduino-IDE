@@ -2,7 +2,7 @@
 <h2>DEV platform with OTA based on ESP8266-01</h2>
 <p>Dev platform on esp8266-01 with the 4 gpio pin activated and OTA functionalities.<br> 
 Web app interface with Async web serever.<br> 
-The ewb server html and css and js file are stored in the Data directory</p>
+The web server html and css and js file are stored in the Data directory</p>
 <p>The folowing libraries must be installed:</p>
 <ul>
 <li><a href="https://github.com/me-no-dev/ESPAsyncTCP">ESPAsyncTCP</a></li>
