@@ -32,6 +32,7 @@ function onMessage(event) {
                 var state = myObj.gpios[i].state;
                 console.log(output);
                 console.log(state);
+				console.log(i);
                 if (state == "1"){
                     document.getElementById(output).checked = true;
                     document.getElementById(output+"s").innerHTML = "ON";
