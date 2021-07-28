@@ -12,7 +12,7 @@
 // Replace with your network credentials
 const char* ssid = "****************";
 const char* password = "******************";
-const char* host = "esp32";
+const char* host = "esp8266-01";
 const char* configfile = "/config.ini";
 String configString;
 String initval;
