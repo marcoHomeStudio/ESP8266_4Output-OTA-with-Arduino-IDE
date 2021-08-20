@@ -13,6 +13,6 @@
 </div>
 </li>
 <li><a href="https://github.com/earlephilhower/arduino-esp8266littlefs-plugin/releases">LittleFS </a></li>
-<li><a href="https://www.arduino.cc/reference/en/libraries/arduino_json/">Arduino_JSON </a></li>
+<li><a href="https://arduinojson.org/">ArduinoJSON </a></li>
 <li><a href="https://github.com/ayushsharma82/AsyncElegantOTA">AsyncElegantOTA</a></li>
 </ul>

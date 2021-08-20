@@ -1,0 +1,66 @@
+<!DOCTYPE HTML><html>
+  <head>
+    <title>ESP8266 4 Output</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon"  type="image/png" href="favicon.ico">
+    <script src="/script.js"></script>
+  </head>
+  <body>
+    <div class="topnav">
+      <h1>ESP8266 4 Output</h1>
+      
+    
+    </div>
+    <div class="content">
+      <form action="/config">
+        <table class="center">
+          <tr>
+            <td style="text-align:right;"><label for="username">username:</label></td>
+           <td> <input type="text" id="username" name="username" value="name" disabled><br></td>
+           <td style="text-align:left;">Http server username</td>
+        </tr>
+        <tr>
+          <td style="text-align:right;"><label for="password">password:</label></td>
+          <td><input type="text" id="password" name="password" value="password" required><br></td>
+          <td style="text-align:left;">Http server password</td>
+        </tr>
+        <tr>
+          <td style="text-align:right;"><label for="SSID">SSID:</label></td>
+          <td><input type="text" id="SSID" name="SSID" required><br></td>
+          <td style="text-align:left;">Wifi access point SSID</td>
+        </tr>
+        <tr>
+          <td style="text-align:right;"><label for="APkey">AP key:</label></td>
+          <td><input type="text" id="APkey" name="APkey" required><br></td>
+          <td style="text-align:left;">Wifi accesspoint password</td>
+        </tr>
+        <tr>
+          <td style="text-align:right;"> <label for="ESPhostname">ESPhostname:</label></td>
+          <td><input type="text" id="ESPhostname" name="ESPhostname" required><br></td>
+          <td style="text-align:left;">Network name of the device</td>
+        </tr>
+        
+         </table>
+        <input type="submit" value="Save config" class="button">
+       
+      </form> 
+      
+  </div>
+  
+  <script language="JavaScript">
+  var req = new XMLHttpRequest();
+    req.open('GET', document.location, false);
+    req.send(null);
+    var headers = req.getAllResponseHeaders();
+    console.log(headers);
+    document.getElementById('username').setAttribute('value', req.getResponseHeader("username"));
+    document.getElementById('password').setAttribute('value', req.getResponseHeader("password"));
+    document.getElementById('ESPhostname').setAttribute('value', req.getResponseHeader("ESPhostname"));
+    document.getElementById('SSID').setAttribute('value', req.getResponseHeader("SSID"));
+    document.getElementById('APkey').setAttribute('value', req.getResponseHeader("APkey"));
+  
+  </script>
+  
+    </body>
+  </html>

@@ -1,0 +1,114 @@
+<!DOCTYPE HTML><html>
+<head>
+  <title>ESP8266 4 Output</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="icon"  type="image/png" href="favicon.ico">
+  <script src="/script.js"></script>
+</head>
+<body>
+  <div class="topnav">
+    <h1 id="fName"></h1>
+    <button class="button" onclick="homepage()">Home</button>
+	  <button class="button" onclick="logoutButton()">Logout</button>
+	  <button class="button" onclick="update()">Upgrade firmware</button>
+  
+  </div>
+  <div class="content">
+    <form action="/config">
+      <table class="center">
+        <tr>
+          <td style="text-align:right;"><label for="username">username:</label></td>
+         <td> <input type="text" id="username" name="username" value="name" disabled><br></td>
+         <td style="text-align:left;">Http server username</td>
+      </tr>
+      <tr>
+        <td style="text-align:right;"><label for="password">password:</label></td>
+        <td><input type="text" id="password" name="password" value="password" required><br></td>
+        <td style="text-align:left;">Http server password</td>
+      </tr>
+      <tr>
+        <td style="text-align:right;"><label for="SSID">SSID:</label></td>
+        <td><input type="text" id="SSID" name="SSID" required><br></td>
+        <td style="text-align:left;">Wifi access point SSID</td>
+      </tr>
+      <tr>
+        <td style="text-align:right;"><label for="APkey">AP key:</label></td>
+        <td><input type="text" id="APkey" name="APkey" required><br></td>
+        <td style="text-align:left;">Wifi accesspoint password</td>
+      </tr>
+      <tr>
+        <td style="text-align:right;"> <label for="ESPhostname">ESPhostname:</label></td>
+        <td><input type="text" id="ESPhostname" name="ESPhostname" required><br></td>
+        <td style="text-align:left;">Network name of the device</td>
+      </tr>
+      <tr>
+        <td style="text-align:right;"> <label for="friendlyName">Friendly name:</label></td>
+        <td><input type="text" id="friendlyName" name="friendlyName" required><br></td>
+        <td style="text-align:left;">Device friendly name</td>
+      </tr>
+      <tr>
+        <td style="text-align:right;"><label for="mqtt1Server">mqtt1Server:</label></td>
+        <td><input type="text" id="mqtt1Server" name="mqtt1Server" required><br></td>
+        <td style="text-align:left;">MQTT server 1 ex: local lan</td>
+      </tr>
+      <tr>
+        <td style="text-align:right;"><label for="mqtt1User">mqtt1User:</label></td>
+        <td><input type="text" id="mqtt1User" name="mqtt1User" required><br></td>
+        <td style="text-align:left;">MQTT1 user name</td>
+      </tr>
+      <tr>
+        <td style="text-align:right;"><label for="mqtt1Password">mqtt1Password:</label></td>
+        <td><input type="text" id="mqtt1Password" name="mqtt1Password" required><br></td>
+        <td style="text-align:left;">MQTT1 password</td>
+      </tr>
+      <tr>
+        <td style="text-align:right;"><label for="mqtt1ClientId">mqtt1ClientId:</label></td>
+        <td><input type="text" id="mqtt1ClientId" name="mqtt1ClientId" required><br></td>
+        <td style="text-align:left;">MQTT1 client id</td>
+      </tr>
+      <tr>
+        <td style="text-align:right;"><label for="mqtt1Topic1">mqtt1Topic1:</label></td>
+        <td><input type="text" id="mqtt1Topic1" name="mqtt1Topic1" required><br></td>
+        <td style="text-align:left;">MQTT1 Publish topic </td>
+      </tr>
+      <tr>
+        <td style="text-align:right;"><label for="mqtt1Topic2">mqtt1Topic2:</label></td>
+        <td><input type="text" id="mqtt1Topic2" name="mqtt1Topic2" required><br></td>
+        <td style="text-align:left;">MQTT1 Subscribe topic </td>
+      </tr>
+      
+      
+       </table>
+      <input type="submit" value="Save config" class="button">
+      <button type="button" onclick="homepage()" class="button">Cancel</button>
+      <button type="button" onclick="resetfactory()" class="button">Reset to factory default</button>
+     
+    </form> 
+    
+</div>
+
+<script language="JavaScript">
+    var req = new XMLHttpRequest();
+    req.open('GET', document.location, false);
+    req.send(null);
+    var headers = req.getAllResponseHeaders();
+    console.log(headers);
+    document.getElementById('username').setAttribute('value', req.getResponseHeader("username"));
+    document.getElementById('password').setAttribute('value', req.getResponseHeader("password"));
+    document.getElementById('ESPhostname').setAttribute('value', req.getResponseHeader("ESPhostname"));
+    document.getElementById('friendlyName').setAttribute('value', req.getResponseHeader("friendlyName"));
+    document.getElementById('mqtt1Server').setAttribute('value', req.getResponseHeader("mqtt1Server"));
+    document.getElementById('SSID').setAttribute('value', req.getResponseHeader("SSID"));
+    document.getElementById('APkey').setAttribute('value', req.getResponseHeader("APkey"));
+    document.getElementById('mqtt1User').setAttribute('value', req.getResponseHeader("mqtt1User"));
+    document.getElementById('mqtt1Password').setAttribute('value', req.getResponseHeader("mqtt1Password"));
+    document.getElementById('mqtt1ClientId').setAttribute('value', req.getResponseHeader("mqtt1ClientId"));
+    document.getElementById('mqtt1Topic1').setAttribute('value', req.getResponseHeader("mqtt1Topic1"));
+    document.getElementById('mqtt1Topic2').setAttribute('value', req.getResponseHeader("mqtt1Topic2"));
+    document.title=req.getResponseHeader("ESPhostname");  
+    document.getElementById('fName').innerHTML= req.getResponseHeader("friendlyName");
+</script>
+
+  </body>
+</html>

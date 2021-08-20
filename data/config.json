@@ -1,0 +1,20 @@
+{
+   "init":true,
+   "APname":"Esp8266-4Output",
+   "APkey":"123456789",
+   "ESPhostname":"<YOUR HOSTNAME>",
+   "friendlyName":"<YOUR FRIENDLY NAME>",
+   "SSID":"<YOUR SSID>",
+   "wifikey":"<YOUR WIFI KEY>",
+   "username":"admin",
+   "password":"12345",
+   "mqtt1Server":"<MQTT SERVER>",
+   "mqtt1Port":1883,
+   "mqtt1User" : "<MQTT USER>",
+   "mqtt1Password":"<MQTT PASSWORD>",
+   "mqtt1ClientId":"<MQTT CLIENT ID>",
+   "mqtt1Topic1":"<MQTT PUBLISH TOPIC>",
+   "mqtt1Topic2":"<MQTT SUBSCRIBE TOPIC>"
+   
+   
+}

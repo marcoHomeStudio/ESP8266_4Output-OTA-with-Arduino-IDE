@@ -6,6 +6,9 @@ h1 {
     font-size: 1.8rem; 
     color: white;
 }
+input {
+    width: 200px;
+  }
 .topnav { 
     overflow: hidden; 
     background-color: #03103b;
@@ -17,13 +20,14 @@ body {
     padding: 50px;
 }
 .card-grid { 
-    max-width: 600px; 
+    max-width: 80%; 
     margin: 0 auto; 
     display: grid; 
     gap: 2rem; 
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
-.card { 
+.card {
+	width:"auto";
     background-color: white; 
     box-shadow: 2px 2px 12px 1px rgba(140,140,140,.5);
 }
@@ -84,3 +88,8 @@ input:checked+.slider:before {
   cursor: pointer;
   border-radius: 12px;
 }
+.center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  

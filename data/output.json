@@ -1,0 +1,8 @@
+{
+"gpios":[
+{"output":"0","state":"0"},
+{"output":"2","state":"0"},
+{"output":"1","state":"0"},
+{"output":"3","state":"0"}
+]
+}

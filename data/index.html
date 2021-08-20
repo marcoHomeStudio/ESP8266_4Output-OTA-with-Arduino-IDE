@@ -1,17 +1,20 @@
 <!DOCTYPE HTML><html>
 <head>
-  <title>ESP 8266-01 Dashboard</title>
+  <title id="title"></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="icon"  type="image/png" href="favicon.ico">
-  
+  <script src="/script.js"></script>
 </head>
 <body>
-  <div class="topnav">
-    <h1>ESP8266-01 - 4 output module</h1>
-	<button class="button" onclick="logoutButton()">Logout</button>
-	<button class="button" onclick="update()">Update</button>
-  </div>
+    <div class="topnav">
+        <h1 id="friendlyName"></h1>
+        <button class="button" onclick="logoutButton()">Logout</button>
+      <button class="button" onclick="setup()">Setup</button>
+        <button class="button" onclick="update()">Upgrade firmware</button>
+      <button class="button" onclick="reboot()">Reboot device</button>
+      
+      </div>
 
   <div class="content">
     <div class="card-grid">
@@ -48,8 +51,91 @@
             <p class="state">State: <span id="3s"></span></p>
         </div>
     </div>
+    <div id="message"></div>
 </div>
-<script src="/script.js"></script>
+
+<script>
+var gateway = `ws://${window.location.hostname}/ws`;
+var websocket;
+window.addEventListener('load', onLoad);
+
+function onLoad(event) {
+    initWebSocket();
+}
+
+function initWebSocket() {
+    console.log('Trying to open a WebSocket connection...');
+    websocket = new WebSocket(gateway);
+    websocket.onopen    = onOpen;
+    websocket.onclose   = onClose;
+    websocket.onmessage = onMessage;
+}
+
+function onOpen(event) {
+    console.log('Connection opened');
+    websocket.send("states");
+}
+  
+function onClose(event) {
+    console.log('Connection closed');
+    setTimeout(initWebSocket, 2000);
+} 
+
+function onMessage(event) {
+    console.log(event.data);
+    var myObj = JSON.parse(event.data); 
+    console.log(myObj);
+    if (myObj.gpios){
+        for (i in myObj.gpios){
+            var output = myObj.gpios[i].output;
+            var state = myObj.gpios[i].state;
+            if (state == "1"){
+                document.getElementById(output).checked = true;
+                document.getElementById(output+"s").innerHTML = "ON";
+            }
+            else{
+                document.getElementById(output).checked = false;
+                document.getElementById(output+"s").innerHTML = "OFF";
+            }
+        } 
+        
+    }
+    else if (myObj.message){
+        document.getElementById("message").innerHTML = myObj.message;
+        myVar = setTimeout(cleardivmessage, 5000);
+    }
+    else {
+        document.getElementById("message").innerHTML = event.data;
+        myVar = setTimeout(cleardivmessage, 5000);
+    }
+
+}
+function cleardivmessage(){
+    document.getElementById("message").innerHTML = "";""
+}
+
+// Send Requests to Control GPIOs
+function toggleCheckbox (element) {
+    console.log(element.id);
+    websocket.send(element.id);
+    if (element.checked){
+        document.getElementById(element.id+"s").innerHTML = "ON";
+    }
+    else {
+        document.getElementById(element.id+"s").innerHTML = "OFF"; 
+    }
+}
+    var req = new XMLHttpRequest();
+    req.open('GET', document.location, false);
+    req.send(null);
+    var headers = req.getAllResponseHeaders();
+    console.log(headers);
+    document.getElementById('title').innerHTML=req.getResponseHeader("ESPhostname");  
+    document.getElementById('friendlyName').innerHTML=req.getResponseHeader("FriendlyName");
+
+</script>
+
+
 </body>
 </html>
 
