@@ -93,6 +93,8 @@ Once the bin file has been updated the device will reboot and the OTA page show 
 
 To go back to your home page you'll have to type it in your browser address bar.
 
+To create the sketch bin file to be uploaded as firmware, go to the menu Sketch/Export compiled binary 
+
 # Networking consideration
 The code assume that you are using a DHCCP server on your main router on your network and expect to have an IP address automatically delivered by the DHCP server.
 
@@ -147,5 +149,5 @@ I will improve the following in the future.
 
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNTk3ODY0NjJdfQ==
+eyJoaXN0b3J5IjpbLTE5OTc3MjE4NTBdfQ==
 -->
