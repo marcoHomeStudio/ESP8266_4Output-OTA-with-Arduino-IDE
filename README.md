@@ -93,10 +93,10 @@ Once the bin file has been updated the device will reboot and the OTA page show 
 
 To go back to your home page you'll have to type it in your browser address bar.
 
-To create the sketch bin file to be uploaded as firmware, go to the menu Sketch/Export compiled binary in your arduino IDE,
+To create the sketch bin file to be uploaded as firmware, go to the menu ***Sketch/Export compiled binary*** in your arduino IDE,
 The arduino IDE will compile the sketch and store it as bin file inside your arduino sketch folder.
 
-To vcreate the bin file to be uploaded as filesystem without the module conencted viaa USB go to the menu 
+To vcreate the bin file to be uploaded as filesystem without the module connected via USB go to the menu Tools/ESP8266 LittleFS data upload Some error are going to be split out on the monitor, that is perfectly normal
 
 # Networking consideration
 The code assume that you are using a DHCCP server on your main router on your network and expect to have an IP address automatically delivered by the DHCP server.
@@ -152,5 +152,5 @@ I will improve the following in the future.
 
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NzIxMDI1MjhdfQ==
+eyJoaXN0b3J5IjpbLTEwOTY5MTA1NTddfQ==
 -->
