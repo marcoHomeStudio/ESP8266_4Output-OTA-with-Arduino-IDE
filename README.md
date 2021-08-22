@@ -143,9 +143,8 @@ I will improve the following in the future.
  2. Simplifying the Json string structure for serialization and deserialization both on client side and server side.
  3. Possibility to choose a Friendly name for the output in the setup page.
  4. Possibility to revert the output state 0 for HIGH" and 1 for "LOW"
- 5. Dividing the code in multiple Tab  for clarification and avoid this monolithic coding style.
- 6. (maybe) implementing TLS connection for the MQTT broker
- 7. (maybe) implementing HTTPS connection for the internal webserver.
+ 5. (maybe) implementing TLS connection for the MQTT broker
+ 6. (maybe) implementing HTTPS connection for the internal webserver.
 
 # Alternate Diagram The 4 channel relay Module
 
