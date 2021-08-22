@@ -20,8 +20,18 @@ void handleWebSocketMessage(void *arg, uint8_t *data, size_t len) {
       client1.publish(config.mqtt1Topic1,payload);      
     }
     else {
-      int gpio = atoi((char*)data);
-      digitalWrite(gpio, !digitalRead(gpio));
+      if (strcmp((char*)data, "output0") == 0){
+        digitalWrite(output0,!digitalRead(output0));
+      }
+      else if (strcmp((char*)data, "output1") == 0){
+        digitalWrite(output1,!digitalRead(output1));
+      }
+      else if (strcmp((char*)data, "output2") == 0){
+        digitalWrite(output2,!digitalRead(output2));
+      }
+      else if(strcmp((char*)data, "output3") == 0){
+        digitalWrite(output3,!digitalRead(output3));
+      }
       notifyClients(getOutputStates()); 
       String stringPayload=getOutputStates();
       char payload[stringPayload.length()+1];

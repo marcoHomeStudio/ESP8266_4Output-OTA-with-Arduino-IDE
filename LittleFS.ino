@@ -9,14 +9,14 @@ void loadOutputFile(const char *outputFile){
    if (error){
     Serial.print(F("Failed to read output file, using default configuration "));
    }
-   if (outputGPIO["gpios"][0]["state"]=="1"){digitalWrite(output1,HIGH);}
-   if (outputGPIO["gpios"][0]["state"]=="0"){digitalWrite(output1,LOW);}
-   if (outputGPIO["gpios"][1]["state"]=="1"){digitalWrite(output2,HIGH);}
-   if (outputGPIO["gpios"][1]["state"]=="0"){digitalWrite(output2,LOW);}
-   if (outputGPIO["gpios"][2]["state"]=="1"){digitalWrite(output3,HIGH);}
-   if (outputGPIO["gpios"][2]["state"]=="0"){digitalWrite(output3,LOW);}
-   if (outputGPIO["gpios"][3]["state"]=="1"){digitalWrite(output4,HIGH);}
-   if (outputGPIO["gpios"][3]["state"]=="0"){digitalWrite(output4,LOW);}
+   if (outputGPIO["gpios"]["output0"]=="1"){digitalWrite(output0,HIGH);}
+   if (outputGPIO["gpios"]["output0"]=="0"){digitalWrite(output0,LOW);}
+   if (outputGPIO["gpios"]["output1"]=="1"){digitalWrite(output1,HIGH);}
+   if (outputGPIO["gpios"]["output1"]=="0"){digitalWrite(output1,LOW);}
+   if (outputGPIO["gpios"]["output2"]=="1"){digitalWrite(output2,HIGH);}
+   if (outputGPIO["gpios"]["output2"]=="0"){digitalWrite(output2,LOW);}
+   if (outputGPIO["gpios"]["output3"]=="1"){digitalWrite(output3,HIGH);}
+   if (outputGPIO["gpios"]["output3"]=="0"){digitalWrite(output3,LOW);}
    client1.publish(config.mqtt1Topic1,stringPayload.c_str());
    ofile.close();   
 }

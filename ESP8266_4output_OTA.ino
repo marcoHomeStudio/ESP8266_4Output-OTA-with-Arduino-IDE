@@ -15,10 +15,10 @@ AsyncWebServer server(80);
 // Create a WebSocket object
 AsyncWebSocket ws("/ws");
 
-#define output1  0
-#define output2  2
-#define output3  1
-#define output4  3
+#define output0  0
+#define output1  2
+#define output2  1
+#define output3  3
 #define outputLed 1
 #define factoryResetButton 3
 
@@ -68,14 +68,10 @@ void initWiFi() {
 
 String getOutputStates() {
   DynamicJsonDocument myArray(1024);
-  myArray["gpios"][0]["output"] = String(output1);
-  myArray["gpios"][0]["state"] = String(digitalRead(output1));
-  myArray["gpios"][1]["output"] = String(output2);
-  myArray["gpios"][1]["state"] = String(digitalRead(output2));
-  myArray["gpios"][2]["output"] = String(output3);
-  myArray["gpios"][2]["state"] = String(digitalRead(output3));
-  myArray["gpios"][3]["output"] = String(output4);
-  myArray["gpios"][3]["state"] = String(digitalRead(output4));
+  myArray["gpios"]["output0"] = String(digitalRead(output0));
+  myArray["gpios"]["output1"] = String(digitalRead(output1));
+  myArray["gpios"]["output2"] = String(digitalRead(output2));
+  myArray["gpios"]["output3"] = String(digitalRead(output3));
   String jsonString;
   serializeJson(myArray, jsonString);
   return jsonString;
@@ -120,11 +116,11 @@ void setup() {
     */
   Serial.begin(115200);
   Serial.println("Starting device...");
+  pinMode(output0, OUTPUT);
   pinMode(output1, OUTPUT);
-  pinMode(output2, OUTPUT);
   //Comment the following two lines to use the serial port
+  pinMode(output2, OUTPUT);
   pinMode(output3, OUTPUT);
-  pinMode(output4, OUTPUT);
   
   if (!LittleFS.begin()) {
     Serial.println("An Error has occurred while mounting LittleFS");
