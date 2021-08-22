@@ -19,6 +19,8 @@ AsyncWebSocket ws("/ws");
 #define output2  2
 #define output3  1
 #define output4  3
+#define outputLed 1
+#define factoryResetButton 3
 
 struct Config {
   bool init;
@@ -45,6 +47,8 @@ Config config;
 bool restartMCU=false;
 WiFiClient espClient;
 PubSubClient client1(espClient);
+unsigned long broadcastStateTimer=60000;
+unsigned long broadcastStateTime=0;
 // Initialize LittleFS
 void initLittleFS() {
   LittleFS.begin();
@@ -343,22 +347,32 @@ boolean reconnect() {
   }
   return client1.connected();
 }
+
+void broadcastState(){
+  String stringPayload=getOutputStates();
+  char payload[stringPayload.length()+1];
+  stringPayload.toCharArray(payload,sizeof(payload)+1 );
+  Serial.println(stringPayload);
+  saveOutputFile(outputFile,stringPayload.c_str());
+  client1.publish(config.mqtt1Topic1,payload);      
+}
+
 void setup() {
   
  initLittleFS();
  loadConfiguration(configFile, config);
  //Factory reset loop
-  pinMode(3, FUNCTION_3);
-  pinMode(3, INPUT_PULLUP);
-  if(digitalRead(3)==LOW){
+  pinMode(factoryResetButton, FUNCTION_3);
+  pinMode(factoryResetButton, INPUT_PULLUP);
+  if(digitalRead(factoryResetButton)==LOW){
     bool factoryReset=HIGH;
-    pinMode(1, FUNCTION_3);
-    pinMode(1, OUTPUT);
+    pinMode(outputLed, FUNCTION_3);
+    pinMode(outputLed, OUTPUT);
     resetConfig();
     while(factoryReset==HIGH){
-      digitalWrite(1,LOW);
+      digitalWrite(outputLed,LOW);
       delay(1000);
-      digitalWrite(1,HIGH);
+      digitalWrite(outputLed,HIGH);
       delay(1000);
     }
   }
@@ -546,7 +560,7 @@ else{
    server.begin(); 
   Serial.println(F("Print config file..."));
   printFile(configFile);
-  
+  broadcastStateTime=millis();  
   lastReconnectAttempt = 0;
 }
 void loop() {
@@ -569,6 +583,10 @@ void loop() {
     client1.loop();
   }
     ws.cleanupClients();
-    }
+    if (millis()-broadcastStateTime>=broadcastStateTimer){
+    broadcastState();
+    broadcastStateTime=millis();
+   }
+  }
   
 }
