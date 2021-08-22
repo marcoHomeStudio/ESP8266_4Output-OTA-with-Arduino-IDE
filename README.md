@@ -13,8 +13,8 @@ A config.json file is stored in the data folder for the device parameter.
 The web server html and css and js file are stored in the Data directory.
 
 ## Installation
-Just copy the **ESP8266_4output_OTA.ino** file and the **data** folder to your Arduino sketch folder. 
-Upload the sketch from Arduino IDE 
+Copy the following ino files **ESP8266_4output_OTA.ino**,  **LittleFS.ino**, **MQTT.ini**, **Webpage.ino**, **Webserver.ino** and the **data** folder to your Arduino sketch folder. 
+Compile and Upload the sketch from Arduino IDE 
 Upload the ***data*** folder with the ***[ESP8266 Little FS data upload](https://github.com/earlephilhower/arduino-esp8266littlefs-plugin)*** python script form the arduino IDE 
 
 ## Dependencies
