@@ -13,8 +13,8 @@ A config.json file is stored in the data folder for the device parameter.
 The web server html and css and js file are stored in the Data directory.
 
 ## Installation
-Just copy the **ESP8266_4output_OTA.ino** file and the **data** folder to your Arduino sketch folder. 
-Upload the sketch from Arduino IDE 
+Copy the following ino files **ESP8266_4output_OTA.ino**,  **LittleFS.ino**, **MQTT.ini**, **Webpage.ino**, **Webserver.ino** and the **data** folder to your Arduino sketch folder. 
+Compile and Upload the sketch from Arduino IDE 
 Upload the ***data*** folder with the ***[ESP8266 Little FS data upload](https://github.com/earlephilhower/arduino-esp8266littlefs-plugin)*** python script form the arduino IDE 
 
 ## Dependencies
@@ -64,14 +64,11 @@ You can reset the module to Factory default by clicking on the button ***Reset t
 # MQTT flow
 The MQTT flow is based on a json String formatted as follow:
 
-    {"gpios":[
-        {"output":"0","state":"0"},
-        {"output":"2","state":"1"},
-        {"output":"1","state":"1"},
-        {"output":"3","state":"0"}]}
-Where the character "0" to "3" after output is the Esp8266-01 module GPIO
-"output": "0" represent the GPIO 0 of the ESP9266-01
-The "state" property represent the output state "1"="ON" or "0"="OFF"
+   ***{"output0":"0","output1":"0","output2":"1","output3":"0"}***
+   
+   Where "output0" is connected to the Esp8266-01 module GPIO0 etc...
+   
+"***output0***" value of the property represent the output state "*1"="ON" /"HIGH"* or *"0"="OFF"/"LOW"*
 
 The module is publishing the output state via the json string formatted above on the mqtt1Topic1 every time any state of the 4 output is modified either by the web interface or via the MQTT subscribed channel.
 
@@ -134,18 +131,16 @@ The init field is selecting the device mode.
 
 True= device initialization, the device is set  in AP mode.
 
-False= Device normal mode, the device start in wifi station mode and the device parameters are read and apply from the coinfig.json file.
+False= Device normal mode, the device start in wifi station mode and the device parameters are read and apply from the config.json file.
 
 # To do
-I will improve the following in the future.
-
- 1. Implementing my own OTA interface to be able to automatically redirect to the Home page after successful update
- 2. Simplifying the Json string structure for serialization and deserialization both on client side and server side.
- 3. Possibility to choose a Friendly name for the output in the setup page.
+I will improve the following in the future. 
+						
+ 1. Implementing my own OTA interface to be able to automatically redirect to the Home page after successful update 
+ 3. Pos	sibility to choose a Friendly name for the output in the setup page.
  4. Possibility to revert the output state 0 for HIGH" and 1 for "LOW"
- 5. Dividing the code in multiple Tab  for clarification and avoid this monolithic coding style.
- 6. (maybe) implementing TLS connection for the MQTT broker
- 7. (maybe) implementing HTTPS connection for the internal webserver.
+ 5. (ma		ybe) implementing TLS connection for the MQTT broker
+ 6. (mae) implementing HTTPS connection for the internal webserver.
 
 # Alternate Diagram The 4 channel relay Module
 
@@ -156,5 +151,6 @@ I will improve the following in the future.
 
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwODc1NjMzMF19
+eyJoaXN0b3J5IjpbMjY3Mzg4OTU5LC0yMDc4OTgzNDQxLC0yMD
+g3NTYzMzBdfQ==
 -->

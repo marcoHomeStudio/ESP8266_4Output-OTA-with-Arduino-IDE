@@ -19,39 +19,39 @@
   <div class="content">
     <div class="card-grid">
         <div class="card">             
-            <p class="card-title"> output 1</p>
+            <p class="card-title"> output 0</p>
             <label class="switch">
-                <input type="checkbox" onchange="toggleCheckbox(this)" id="0">
+                <input type="checkbox" onchange="toggleCheckbox(this)" id="output0">
                 <span class="slider"></span>
             </label>
-            <p class ="state">State: <span id="0s"></span></p>
+            <p class ="state">State: <span id="output0s"></span></p>
+        </div>
+        <div class="card">
+            <p class="card-title"> output 1</p>
+            <label class="switch">
+                <input type="checkbox" onchange="toggleCheckbox(this)" id="output1">
+                <span class="slider"></span>
+            </label>
+            <p class ="state">State: <span id="output1s"></span></p>
         </div>
         <div class="card">
             <p class="card-title"> output 2</p>
             <label class="switch">
-                <input type="checkbox" onchange="toggleCheckbox(this)" id="1">
+                <input type="checkbox" onchange="toggleCheckbox(this)" id="output2">
                 <span class="slider"></span>
             </label>
-            <p class ="state">State: <span id="1s"></span></p>
+            <p class ="state">State: <span id="output2s"></span></p>
         </div>
         <div class="card">
             <p class="card-title"> output 3</p>
             <label class="switch">
-                <input type="checkbox" onchange="toggleCheckbox(this)" id="2">
+                <input type="checkbox" onchange="toggleCheckbox(this)" id="output3">
                 <span class="slider"></span>
             </label>
-            <p class ="state">State: <span id="2s"></span></p>
-        </div>
-        <div class="card">
-            <p class="card-title"> output4</p>
-            <label class="switch">
-                <input type="checkbox" onchange="toggleCheckbox(this)" id="3">
-                <span class="slider"></span>
-            </label>
-            <p class="state">State: <span id="3s"></span></p>
+            <p class="state">State: <span id="output3s"></span></p>
         </div>
     </div>
-    <div id="message"></div>
+    <div ><span id="msghd"></span><span id="message"></span></div>
 </div>
 
 <script>
@@ -84,34 +84,54 @@ function onClose(event) {
 function onMessage(event) {
     console.log(event.data);
     var myObj = JSON.parse(event.data); 
-    console.log(myObj);
-    if (myObj.gpios){
-        for (i in myObj.gpios){
-            var output = myObj.gpios[i].output;
-            var state = myObj.gpios[i].state;
-            if (state == "1"){
-                document.getElementById(output).checked = true;
-                document.getElementById(output+"s").innerHTML = "ON";
-            }
-            else{
-                document.getElementById(output).checked = false;
-                document.getElementById(output+"s").innerHTML = "OFF";
-            }
-        } 
-        
-    }
-    else if (myObj.message){
-        document.getElementById("message").innerHTML = myObj.message;
-        myVar = setTimeout(cleardivmessage, 5000);
-    }
-    else {
+    if (myObj.hasOwnProperty('output0')){
+        document.getElementById("msghd").innerHTML = "";
         document.getElementById("message").innerHTML = event.data;
-        myVar = setTimeout(cleardivmessage, 5000);
+        myVar = setTimeout(clearMessage, 5000);
+        if (myObj.output0=="1"){
+                document.getElementById("output0").checked = true;
+                document.getElementById("output0s").innerHTML = "ON";
+            }
+        else if(myObj.output0=="0"){
+                document.getElementById("output0").checked = false;
+                document.getElementById("output0s").innerHTML = "OFF";
+            }
+        if (myObj.output1=="1"){
+                document.getElementById("output1").checked = true;
+                document.getElementById("output1s").innerHTML = "ON";
+            }
+        else if(myObj.output1=="0"){
+                document.getElementById("output1").checked = false;
+                document.getElementById("output1s").innerHTML = "OFF";
+            }
+        if (myObj.output2=="1"){
+                document.getElementById("output2").checked = true;
+                document.getElementById("output2s").innerHTML = "ON";
+            }
+        else if(myObj.output2=="0"){
+                document.getElementById("output2").checked = false;
+                document.getElementById("output2s").innerHTML = "OFF";
+            }
+        if (myObj.output3=="1"){
+                document.getElementById("output3").checked = true;
+                document.getElementById("output3s").innerHTML = "ON";
+            }
+        else if(myObj.output3=="0"){
+                document.getElementById("output3").checked = false;
+                document.getElementById("output3s").innerHTML = "OFF";
+            }
     }
 
+    else if (myObj.hasOwnProperty('message')){
+        document.getElementById("msghd").innerHTML = "Message:";
+        document.getElementById("message").innerHTML = myObj.message;
+        myVar = setTimeout(clearMessage, 5000);
+    }
 }
-function cleardivmessage(){
-    document.getElementById("message").innerHTML = "";""
+
+function clearMessage(){
+    document.getElementById("message").innerHTML = "";
+    document.getElementById("msghd").innerHTML = "";
 }
 
 // Send Requests to Control GPIOs
