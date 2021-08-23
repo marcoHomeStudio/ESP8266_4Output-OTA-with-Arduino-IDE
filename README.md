@@ -133,12 +133,12 @@ False= Device normal mode, the device start in wifi station mode and the device 
 
 # To do
 I will improve the following in the future. 
-
- 1. Implementing my own OTA interface to be able to automatically redirect to the Home page after successful update 
- 3. Possibility to choose a Friendly name for the output in the setup page.
+						
+ 1. I	implementing my own OTA interface to be able to automatically redirect to the Home page after successful update 
+ 3. Pos	sibility to choose a Friendly name for the output in the setup page.
  4. Possibility to revert the output state 0 for HIGH" and 1 for "LOW"
- 5. (maybe) implementing TLS connection for the MQTT broker
- 6. (maybe) implementing HTTPS connection for the internal webserver.
+ 5. (ma		ybe) implementing TLS connection for the MQTT broker
+ 6. (mae) implementing HTTPS connection for the internal webserver.
 
 # Alternate Diagram The 4 channel relay Module
 
@@ -149,5 +149,5 @@ I will improve the following in the future.
 
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwOTY4ODkzNDEsLTIwODc1NjMzMF19
+eyJoaXN0b3J5IjpbOTgyMDgzOTExLC0yMDg3NTYzMzBdfQ==
 -->
