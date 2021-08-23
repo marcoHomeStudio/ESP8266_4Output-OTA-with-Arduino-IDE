@@ -66,7 +66,7 @@ The MQTT flow is based on a json String formatted as follow:
 
    ***{"output0":"0","output1":"0","output2":"1","output3":"0"}***
    
-   Where "output0" isconnected  the Esp8266-01 module GPIO
+   Where "output0" is connected to the Esp8266-01 module GPIO0 etc...
    
 "***output0***" value of the property represent the output state "*1"="ON" /"HIGH"* or *"0"="OFF"/"LOW"*
 
@@ -151,6 +151,6 @@ I will improve the following in the future.
 
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzkyMDI0NjQwLC0yMDc4OTgzNDQxLC0yMD
+eyJoaXN0b3J5IjpbMjY3Mzg4OTU5LC0yMDc4OTgzNDQxLC0yMD
 g3NTYzMzBdfQ==
 -->
