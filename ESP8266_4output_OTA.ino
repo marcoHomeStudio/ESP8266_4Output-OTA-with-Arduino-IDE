@@ -68,10 +68,10 @@ void initWiFi() {
 
 String getOutputStates() {
   DynamicJsonDocument myArray(1024);
-  myArray["gpios"]["output0"] = String(digitalRead(output0));
-  myArray["gpios"]["output1"] = String(digitalRead(output1));
-  myArray["gpios"]["output2"] = String(digitalRead(output2));
-  myArray["gpios"]["output3"] = String(digitalRead(output3));
+  myArray["output0"] = String(digitalRead(output0));
+  myArray["output1"] = String(digitalRead(output1));
+  myArray["output2"] = String(digitalRead(output2));
+  myArray["output3"] = String(digitalRead(output3));
   String jsonString;
   serializeJson(myArray, jsonString);
   return jsonString;

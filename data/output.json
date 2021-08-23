@@ -1,8 +1,1 @@
-{
-"gpios":[
-{"output":"0","state":"0"},
-{"output":"2","state":"0"},
-{"output":"1","state":"0"},
-{"output":"3","state":"0"}
-]
-}
+{"output0":"0","output1":"0","output2":"0","output3":"0"}

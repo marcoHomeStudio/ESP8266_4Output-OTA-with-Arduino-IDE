@@ -51,7 +51,7 @@
             <p class="state">State: <span id="output3s"></span></p>
         </div>
     </div>
-    <div id="message"></div>
+    <div ><span id="msghd"></span><span id="message"></span></div>
 </div>
 
 <script>
@@ -84,54 +84,54 @@ function onClose(event) {
 function onMessage(event) {
     console.log(event.data);
     var myObj = JSON.parse(event.data); 
-    console.log(myObj);
-    if (myObj.hasOwnProperty("gpios")){
-        if (myObj.gpios[output0]=="1"){
+    if (myObj.hasOwnProperty('output0')){
+        document.getElementById("msghd").innerHTML = "";
+        document.getElementById("message").innerHTML = event.data;
+        myVar = setTimeout(clearMessage, 5000);
+        if (myObj.output0=="1"){
                 document.getElementById("output0").checked = true;
                 document.getElementById("output0s").innerHTML = "ON";
             }
-        else if(myObj.gpios[output0]=="0"){
+        else if(myObj.output0=="0"){
                 document.getElementById("output0").checked = false;
                 document.getElementById("output0s").innerHTML = "OFF";
             }
-        if (myObj.gpios[output1]=="1"){
+        if (myObj.output1=="1"){
                 document.getElementById("output1").checked = true;
                 document.getElementById("output1s").innerHTML = "ON";
             }
-        else if(myObj.gpios[output1]=="0"){
+        else if(myObj.output1=="0"){
                 document.getElementById("output1").checked = false;
                 document.getElementById("output1s").innerHTML = "OFF";
             }
-        if (myObj.gpios[output2]=="1"){
+        if (myObj.output2=="1"){
                 document.getElementById("output2").checked = true;
                 document.getElementById("output2s").innerHTML = "ON";
             }
-        else if(myObj.gpios[output2]=="0"){
+        else if(myObj.output2=="0"){
                 document.getElementById("output2").checked = false;
                 document.getElementById("output2s").innerHTML = "OFF";
             }
-        if (myObj.gpios[output3]=="1"){
+        if (myObj.output3=="1"){
                 document.getElementById("output3").checked = true;
                 document.getElementById("output3s").innerHTML = "ON";
             }
-        else if(myObj.gpios[output3]=="0"){
+        else if(myObj.output3=="0"){
                 document.getElementById("output3").checked = false;
                 document.getElementById("output3s").innerHTML = "OFF";
             }
     }
 
-    else if (myObj.message){
+    else if (myObj.hasOwnProperty('message')){
+        document.getElementById("msghd").innerHTML = "Message:";
         document.getElementById("message").innerHTML = myObj.message;
-        myVar = setTimeout(cleardivmessage, 5000);
+        myVar = setTimeout(clearMessage, 5000);
     }
-    else {
-        document.getElementById("message").innerHTML = event.data;
-        myVar = setTimeout(cleardivmessage, 5000);
-    }
-
 }
-function cleardivmessage(){
-    document.getElementById("message").innerHTML = "";""
+
+function clearMessage(){
+    document.getElementById("message").innerHTML = "";
+    document.getElementById("msghd").innerHTML = "";
 }
 
 // Send Requests to Control GPIOs
