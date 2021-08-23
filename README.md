@@ -66,8 +66,7 @@ The MQTT flow is based on a json String formatted as follow:
 
    ***{"output0":"0","output1":"0","output2":"1","output3":"0"}***
    
-"output0" is connecte GPIO 0 of the ESP9266-01
-The "state" property represent the output state "1"="ON" or "0"="OFF"
+"***output0***" value of the property represent the output state "1"="ON" /"HIGH" or "0"="OFF"/"LOW"
 
 The module is publishing the output state via the json string formatted above on the mqtt1Topic1 every time any state of the 4 output is modified either by the web interface or via the MQTT subscribed channel.
 
@@ -151,5 +150,5 @@ I will improve the following in the future.
 
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQxMTM1MDQ1OSwtMjA4NzU2MzMwXX0=
+eyJoaXN0b3J5IjpbNzkyNjU3MjIzLC0yMDg3NTYzMzBdfQ==
 -->
