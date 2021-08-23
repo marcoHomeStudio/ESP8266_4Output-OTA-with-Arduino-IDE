@@ -66,7 +66,7 @@ The MQTT flow is based on a json String formatted as follow:
 
    ***{"output0":"0","output1":"0","output2":"1","output3":"0"}***
    
-"***output0***" value of the property represent the output state "1"="ON" /"HIGH" or "0"="OFF"/"LOW"
+"***output0***" value of the property represent the output state "*1"="ON" /"HIGH"* or *"0"="OFF"/"LOW"*
 
 The module is publishing the output state via the json string formatted above on the mqtt1Topic1 every time any state of the 4 output is modified either by the web interface or via the MQTT subscribed channel.
 
@@ -132,10 +132,9 @@ True= device initialization, the device is set  in AP mode.
 False= Device normal mode, the device start in wifi station mode and the device parameters are read and apply from the coinfig.json file.
 
 # To do
-I will improve the following in the future.
+I will improve the following in the future. 
 
- 1. Implementing my own OTA interface to be able to automatically redirect to the Home page after successful update
- 2. Simplifying the Json string structure for serialization and deserialization both on client side and server side.
+ 1. Implementing my own OTA interface to be able to automatically redirect to the Home page after successful update 
  3. Possibility to choose a Friendly name for the output in the setup page.
  4. Possibility to revert the output state 0 for HIGH" and 1 for "LOW"
  5. (maybe) implementing TLS connection for the MQTT broker
@@ -150,5 +149,5 @@ I will improve the following in the future.
 
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzkyNjU3MjIzLC0yMDg3NTYzMzBdfQ==
+eyJoaXN0b3J5IjpbLTEwOTY4ODkzNDEsLTIwODc1NjMzMF19
 -->
