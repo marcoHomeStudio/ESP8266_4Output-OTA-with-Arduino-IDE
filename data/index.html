@@ -19,7 +19,7 @@
   <div class="content">
     <div class="card-grid">
         <div class="card">             
-            <p class="card-title"> output 0</p>
+            <p class="card-title" id="output0Friendlyname"> output 0</p>
             <label class="switch">
                 <input type="checkbox" onchange="toggleCheckbox(this)" id="output0">
                 <span class="slider"></span>
@@ -27,7 +27,7 @@
             <p class ="state">State: <span id="output0s"></span></p>
         </div>
         <div class="card">
-            <p class="card-title"> output 1</p>
+            <p class="card-title" id="output1Friendlyname"> output 1</p>
             <label class="switch">
                 <input type="checkbox" onchange="toggleCheckbox(this)" id="output1">
                 <span class="slider"></span>
@@ -35,7 +35,7 @@
             <p class ="state">State: <span id="output1s"></span></p>
         </div>
         <div class="card">
-            <p class="card-title"> output 2</p>
+            <p class="card-title" id="output2Friendlyname"> output 2</p>
             <label class="switch">
                 <input type="checkbox" onchange="toggleCheckbox(this)" id="output2">
                 <span class="slider"></span>
@@ -43,7 +43,7 @@
             <p class ="state">State: <span id="output2s"></span></p>
         </div>
         <div class="card">
-            <p class="card-title"> output 3</p>
+            <p class="card-title" id="output3Friendlyname"> output 3</p>
             <label class="switch">
                 <input type="checkbox" onchange="toggleCheckbox(this)" id="output3">
                 <span class="slider"></span>
@@ -58,7 +58,10 @@
 var gateway = `ws://${window.location.hostname}/ws`;
 var websocket;
 window.addEventListener('load', onLoad);
-
+var output0reverse;
+var output1reverse;
+var output2reverse;
+var output3reverse;
 function onLoad(event) {
     initWebSocket();
 }
@@ -89,36 +92,84 @@ function onMessage(event) {
         document.getElementById("message").innerHTML = event.data;
         myVar = setTimeout(clearMessage, 5000);
         if (myObj.output0=="1"){
+            if(output0reverse=="1"){
+                document.getElementById("output0").checked =false;
+                document.getElementById("output0s").innerHTML = "OFF";
+            }
+             else {
                 document.getElementById("output0").checked = true;
                 document.getElementById("output0s").innerHTML = "ON";
             }
+            }
         else if(myObj.output0=="0"){
+            if(output0reverse=="1"){
+                document.getElementById("output0").checked =true;
+                document.getElementById("output0s").innerHTML = "ON";
+            }
+             else {
                 document.getElementById("output0").checked = false;
                 document.getElementById("output0s").innerHTML = "OFF";
             }
+            }
         if (myObj.output1=="1"){
+            if(output1reverse=="1"){
+                document.getElementById("output1").checked =false;
+                document.getElementById("output1s").innerHTML = "OFF";
+            }
+             else {
                 document.getElementById("output1").checked = true;
                 document.getElementById("output1s").innerHTML = "ON";
             }
+            }
         else if(myObj.output1=="0"){
+            if(output1reverse=="1"){
+                document.getElementById("output1").checked =true;
+                document.getElementById("output1s").innerHTML = "ON";
+            }
+             else {
                 document.getElementById("output1").checked = false;
                 document.getElementById("output1s").innerHTML = "OFF";
             }
+            }
         if (myObj.output2=="1"){
+            if(output2reverse=="1"){
+                document.getElementById("output2").checked =false;
+                document.getElementById("output2s").innerHTML = "OFF";
+            }
+             else {
                 document.getElementById("output2").checked = true;
                 document.getElementById("output2s").innerHTML = "ON";
             }
+            }
         else if(myObj.output2=="0"){
+            if(output2reverse=="1"){
+                document.getElementById("output2").checked =true;
+                document.getElementById("output2s").innerHTML = "ON";
+            }
+             else {
                 document.getElementById("output2").checked = false;
                 document.getElementById("output2s").innerHTML = "OFF";
             }
+            }
         if (myObj.output3=="1"){
+            if(output3reverse=="1"){
+                document.getElementById("output3").checked =false;
+                document.getElementById("output3s").innerHTML = "OFF";
+            }
+             else {
                 document.getElementById("output3").checked = true;
                 document.getElementById("output3s").innerHTML = "ON";
             }
+            }
         else if(myObj.output3=="0"){
+            if(output3reverse=="1"){
+                document.getElementById("output3").checked =true;
+                document.getElementById("output3s").innerHTML = "ON";
+            }
+             else {
                 document.getElementById("output3").checked = false;
                 document.getElementById("output3s").innerHTML = "OFF";
+            }
             }
     }
 
@@ -152,7 +203,14 @@ function toggleCheckbox (element) {
     console.log(headers);
     document.getElementById('title').innerHTML=req.getResponseHeader("ESPhostname");  
     document.getElementById('friendlyName').innerHTML=req.getResponseHeader("FriendlyName");
-
+    document.getElementById('output0Friendlyname').innerHTML= req.getResponseHeader("output0Friendlyname");
+    document.getElementById('output1Friendlyname').innerHTML= req.getResponseHeader("output1Friendlyname");
+    document.getElementById('output2Friendlyname').innerHTML= req.getResponseHeader("output2Friendlyname");
+    document.getElementById('output3Friendlyname').innerHTML= req.getResponseHeader("output3Friendlyname");
+    output0reverse=req.getResponseHeader("output0reverse");
+    output1reverse=req.getResponseHeader("output1reverse");
+    output2reverse=req.getResponseHeader("output2reverse");
+    output3reverse=req.getResponseHeader("output3reverse");
 </script>
 
 

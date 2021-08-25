@@ -38,7 +38,15 @@ struct Config {
   char mqtt1Password[64];
   char mqtt1ClientId[64];
   char mqtt1Topic1[64];
-  char mqtt1Topic2[64];  
+  char mqtt1Topic2[64]; 
+  char output0Friendlyname[64];
+  bool output0reverse;
+  char output1Friendlyname[64];
+  bool output1reverse;
+  char output2Friendlyname[64];
+  bool output2reverse;
+  char output3Friendlyname[64];
+  bool output3reverse;
 };
 
 const char *configFile = "/config.json";
@@ -52,6 +60,10 @@ unsigned long broadcastStateTime=0;
 // Initialize LittleFS
 void initLittleFS() {
   LittleFS.begin();
+  if (!LittleFS.begin()) {
+    Serial.println("An Error has occurred while mounting LittleFS");
+    return;
+  }
 }
 // Initialize WiFi
 void initWiFi() {
@@ -66,23 +78,12 @@ void initWiFi() {
   Serial.println(WiFi.localIP());
 }
 
-String getOutputStates() {
-  DynamicJsonDocument myArray(1024);
-  myArray["output0"] = String(digitalRead(output0));
-  myArray["output1"] = String(digitalRead(output1));
-  myArray["output2"] = String(digitalRead(output2));
-  myArray["output3"] = String(digitalRead(output3));
-  String jsonString;
-  serializeJson(myArray, jsonString);
-  return jsonString;
-}
-
 long lastReconnectAttempt = 0;
 
-void setup() {
-  
+void setup() { 
  initLittleFS();
  loadConfiguration(configFile, config);
+ loadOutputFile(outputFile);
  //Factory reset loop
   pinMode(factoryResetButton, FUNCTION_3);
   pinMode(factoryResetButton, INPUT_PULLUP);
@@ -98,22 +99,21 @@ void setup() {
       delay(1000);
     }
   }
-  
-  
+   
   //********** CHANGE PIN FUNCTION  TO GPIO **********
   //GPIO 1 (TX) swap the pin to a GPIO.
   pinMode(1, FUNCTION_3);
   //GPIO 3 (RX) swap the pin to a GPIO.
   pinMode(3, FUNCTION_3);
   //**************************************************
- 
-  /********** CHANGE PIN FUNCTION  TO TX/RX **********
+
+  /*********** CHANGE PIN FUNCTION  TO TX/RX **********
     //GPIO 1 (TX) swap the pin to a TX.
     pinMode(1, FUNCTION_0);
     //GPIO 3 (RX) swap the pin to a RX.
     pinMode(3, FUNCTION_0);
     //***************************************************
-    */
+  */  
   Serial.begin(115200);
   Serial.println("Starting device...");
   pinMode(output0, OUTPUT);
@@ -121,14 +121,8 @@ void setup() {
   //Comment the following two lines to use the serial port
   pinMode(output2, OUTPUT);
   pinMode(output3, OUTPUT);
-  
-  if (!LittleFS.begin()) {
-    Serial.println("An Error has occurred while mounting LittleFS");
-    return;
-  }
 
-
- if(config.init==true){   
+  if(config.init==true){   
     WiFi.softAP(config.APname, config.APkey);
     IPAddress IP = WiFi.softAPIP();
     Serial.print("AP IP address: ");

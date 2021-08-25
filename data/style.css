@@ -92,4 +92,8 @@ input:checked+.slider:before {
     margin-left: auto;
     margin-right: auto;
   }
+  .reverse {
+    width: 20px;
+    text-align: left;
+  }
   

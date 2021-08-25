@@ -15,14 +15,54 @@ void callback1(char* topic, byte* payload, unsigned int length) {
     return;
   }
   notifyClients(String(stringPayload));
-  if (GPIO["output0"]=="1"){digitalWrite(output0,HIGH);}
-  if (GPIO["output0"]=="0"){digitalWrite(output0,LOW);}
-  if (GPIO["output1"]=="1"){digitalWrite(output1,HIGH);}
-  if (GPIO["output1"]=="0"){digitalWrite(output1,LOW);}
-  if (GPIO["output2"]=="1"){digitalWrite(output2,HIGH);}
-  if (GPIO["output2"]=="0"){digitalWrite(output2,LOW);}
-  if (GPIO["output3"]=="1"){digitalWrite(output3,HIGH);}
-  if (GPIO["output3"]=="0"){digitalWrite(output3,LOW);}
+  if (GPIO["output0"]=="1"){
+    if (config.output0reverse==true){
+      digitalWrite(output0,LOW);
+    }
+    else digitalWrite(output0,HIGH);
+    }
+  if (GPIO["output0"]=="0"){
+    if (config.output0reverse==true){
+      digitalWrite(output0,HIGH);
+    }
+    else digitalWrite(output0,LOW);
+    }
+  if (GPIO["output1"]=="1"){
+    if (config.output1reverse==true){
+      digitalWrite(output0,LOW);
+    }
+    else digitalWrite(output0,HIGH);
+    }
+  if (GPIO["output1"]=="0"){
+    if (config.output1reverse==true){
+      digitalWrite(output0,HIGH);
+    }
+    else digitalWrite(output0,LOW);
+    }
+  if (GPIO["output2"]=="1"){
+    if (config.output2reverse==true){
+      digitalWrite(output2,LOW);
+    }
+    else digitalWrite(output2,HIGH);
+    }
+  if (GPIO["output2"]=="0"){
+    if (config.output2reverse==true){
+      digitalWrite(output2,LOW);
+    }
+    else digitalWrite(output2,HIGH);
+    }
+  if (GPIO["output3"]=="1"){
+    if (config.output3reverse==true){
+      digitalWrite(output3,LOW);
+    }
+    else digitalWrite(output3,HIGH);
+    }
+  if (GPIO["output3"]=="0"){
+    if (config.output3reverse==true){
+      digitalWrite(output3,HIGH);
+    }
+    else digitalWrite(output3,LOW);
+    }
   client1.publish(config.mqtt1Topic1,stringPayload.c_str());
   saveOutputFile(outputFile,stringPayload.c_str());
   }

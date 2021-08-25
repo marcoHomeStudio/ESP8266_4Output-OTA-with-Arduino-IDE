@@ -77,6 +77,34 @@
         <td><input type="text" id="mqtt1Topic2" name="mqtt1Topic2" required><br></td>
         <td style="text-align:left;">MQTT1 Subscribe topic </td>
       </tr>
+      <tr>
+        <td style="text-align:right;"><label for="output0Friendlyname">output0Friendlyname:</label></td>
+        <td><input type="text" id="output0Friendlyname" name="output0Friendlyname" required></td>
+        <td style="text-align:left;">Output0 friendly name </td>
+        <td><input type="checkbox" id="output0reverse" name="output0reverse" class="reverse"></td>
+        <td><label class="reverse">Reverse</label></td>
+      </tr>
+      <tr>
+        <td style="text-align:right;"><label for="output1Friendlyname">output1Friendlyname:</label></td>
+        <td><input type="text" id="output1Friendlyname" name="output1Friendlyname" required></td>
+        <td style="text-align:left;">Output1 friendly name </td>
+        <td><input type="checkbox" id="output1reverse" name="output1reverse" class="reverse"></td>
+        <td><label class="reverse"></label></td>
+      </tr>
+      <tr>
+        <td style="text-align:right;"><label for="output2Friendlyname">output2Friendlyname:</label></td>
+        <td><input type="text" id="output2Friendlyname" name="output2Friendlyname" required></td>
+        <td style="text-align:left;">Output2 friendly name </td>
+        <td><input type="checkbox" id="output2reverse" name="output2reverse" class="reverse"></td>
+        <td><label class="reverse"></label></td>
+      </tr>
+      <tr>
+        <td style="text-align:right;"><label for="output3Friendlyname">output3Friendlyname:</label></td>
+        <td><input type="text" id="output3Friendlyname" name="output3Friendlyname" required></td>
+        <td style="text-align:left;">Output3 friendly name </td>
+        <td><input type="checkbox" id="output3reverse" name="output3reverse" class="reverse"></td>
+        <td><label class="reverse" ></label></td>
+      </tr>
       
       
        </table>
@@ -108,6 +136,20 @@
     document.getElementById('mqtt1Topic2').setAttribute('value', req.getResponseHeader("mqtt1Topic2"));
     document.title=req.getResponseHeader("ESPhostname");  
     document.getElementById('fName').innerHTML= req.getResponseHeader("friendlyName");
+    document.getElementById('output0Friendlyname').setAttribute('value', req.getResponseHeader("output0Friendlyname")); 
+    document.getElementById('output1Friendlyname').setAttribute('value', req.getResponseHeader("output1Friendlyname"));
+    document.getElementById('output2Friendlyname').setAttribute('value', req.getResponseHeader("output2Friendlyname"));
+    document.getElementById('output3Friendlyname').setAttribute('value', req.getResponseHeader("output3Friendlyname"));
+    if (req.getResponseHeader("output0reverse")=="1"){document.getElementById('output0reverse').checked=true;}
+    else document.getElementById('output0reverse').checked=false;
+    if (req.getResponseHeader("output1reverse")=="1"){document.getElementById('output1reverse').checked=true;}
+    else document.getElementById('output1reverse').checked=false;
+    if (req.getResponseHeader("output2reverse")=="1"){document.getElementById('output2reverse').checked=true;}
+    else document.getElementById('output2reverse').checked=false;
+    if (req.getResponseHeader("output3reverse")=="1"){document.getElementById('output3reverse').checked=true;}
+    else document.getElementById('output3reverse').checked=false;
+    
+    
 </script>
 
   </body>

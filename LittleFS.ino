@@ -1,3 +1,14 @@
+String getOutputStates() {
+  DynamicJsonDocument myArray(1024);
+  myArray["output0"] = String(digitalRead(output0));
+  myArray["output1"] = String(digitalRead(output1));
+  myArray["output2"] = String(digitalRead(output2));
+  myArray["output3"] = String(digitalRead(output3));
+  String jsonString;
+  serializeJson(myArray, jsonString);
+  return jsonString;
+}
+
 void loadOutputFile(const char *outputFile){
   File ofile = LittleFS.open(outputFile, "r");
    String stringPayload;
@@ -9,14 +20,54 @@ void loadOutputFile(const char *outputFile){
    if (error){
     Serial.print(F("Failed to read output file, using default configuration "));
    }
-   if (outputGPIO["output0"]=="1"){digitalWrite(output0,HIGH);}
-   if (outputGPIO["output0"]=="0"){digitalWrite(output0,LOW);}
-   if (outputGPIO["output1"]=="1"){digitalWrite(output1,HIGH);}
-   if (outputGPIO["output1"]=="0"){digitalWrite(output1,LOW);}
-   if (outputGPIO["output2"]=="1"){digitalWrite(output2,HIGH);}
-   if (outputGPIO["output2"]=="0"){digitalWrite(output2,LOW);}
-   if (outputGPIO["output3"]=="1"){digitalWrite(output3,HIGH);}
-   if (outputGPIO["output3"]=="0"){digitalWrite(output3,LOW);}
+   if (outputGPIO["output0"]=="1"){
+    if (config.output0reverse==true){
+      digitalWrite(output0,LOW);
+    }
+    else digitalWrite(output0,HIGH);
+   }
+   if (outputGPIO["output0"]=="0"){
+    if (config.output0reverse==true){
+      digitalWrite(output0,HIGH);
+    }
+    else digitalWrite(output0,LOW);
+    }
+   if (outputGPIO["output1"]=="1"){
+    if (config.output1reverse==true){
+      digitalWrite(output1,LOW);
+    }
+    else digitalWrite(output1,HIGH);
+    }
+   if (outputGPIO["output1"]=="0"){
+    if (config.output1reverse==true){
+      digitalWrite(output1,HIGH);
+    }
+    else digitalWrite(output1,LOW);
+    }
+   if (outputGPIO["output2"]=="1"){ 
+    if (config.output2reverse==true){
+      digitalWrite(output2,LOW);
+    }
+    else digitalWrite(output2,HIGH);
+    }
+   if (outputGPIO["output2"]=="0"){
+    if (config.output2reverse==true){
+      digitalWrite(output2,HIGH);
+    }
+    else digitalWrite(output2,LOW);
+    }
+   if (outputGPIO["output3"]=="1"){
+    if (config.output3reverse==true){
+      digitalWrite(output3,LOW);
+    }
+    else digitalWrite(output3,HIGH);
+    }
+   if (outputGPIO["output3"]=="0"){
+    if (config.output3reverse==true){
+      digitalWrite(output3,HIGH);
+    }
+    else digitalWrite(output3,LOW);
+    }
    client1.publish(config.mqtt1Topic1,stringPayload.c_str());
    ofile.close();   
 }
@@ -71,6 +122,23 @@ void loadConfiguration(const char *configFile, Config &config) {
   strlcpy(config.mqtt1Topic2,
           doc["mqtt1Topic2"] | "Esp8266Sensor/stdDeviation",
           sizeof(config.mqtt1Topic2));
+  strlcpy(config.output0Friendlyname,
+          doc["output0Friendlyname"] | "output0",
+          sizeof(config.output0Friendlyname));
+  config.output0reverse = doc["output0reverse"] | false;
+  strlcpy(config.output1Friendlyname,
+          doc["output1Friendlyname"] | "output1",
+          sizeof(config.output1Friendlyname));
+  config.output1reverse = doc["output1reverse"] | false;
+  strlcpy(config.output2Friendlyname,
+          doc["output2Friendlyname"] | "output2",
+          sizeof(config.output2Friendlyname));
+  config.output2reverse = doc["output2reverse"] | false;
+  strlcpy(config.output3Friendlyname,
+          doc["output3Friendlyname"] | "output3",
+          sizeof(config.output3Friendlyname));
+  config.output3reverse = doc["output3reverse"] | false;
+       
   // Close the file (Curiously, File's destructor doesn't close the file)
   file.close();
 }
@@ -120,6 +188,15 @@ void saveConfiguration(const char *configFile, const Config &config) {
   doc["mqtt1ClientId"] = config.mqtt1ClientId;
   doc["mqtt1Topic1"] = config.mqtt1Topic1;
   doc["mqtt1Topic2"] = config.mqtt1Topic2;
+  doc["output0Friendlyname"]=config.output0Friendlyname;
+  doc["output0reverse"]=config.output0reverse;
+  doc["output1Friendlyname"]=config.output1Friendlyname;
+  doc["output1reverse"]=config.output1reverse;
+  doc["output2Friendlyname"]=config.output2Friendlyname;
+  doc["output2reverse"]=config.output2reverse;
+  doc["output3Friendlyname"]=config.output3Friendlyname;
+  doc["output3reverse"]=config.output3reverse;
+  
   // Serialize JSON to file
   if (serializeJson(doc, file) == 0) {
     Serial.println(F("Failed to write to file"));
@@ -143,7 +220,15 @@ void resetConfig(){
   strlcpy(config.mqtt1Topic2,  "<YOUR MQTT SUBSCRIBE CHANNEL>", sizeof(config.mqtt1Topic2)); 
   strlcpy(config.wifikey,  "<YOUR WIFI KEY>", sizeof(config.wifikey)); 
   strlcpy(config.ESPhostname,  "<DEVICE HOSTNAME>", sizeof(config.ESPhostname)); 
-      
+  strlcpy(config.output0Friendlyname,"output0",sizeof(config.output0Friendlyname));
+  config.output0reverse = false;
+  strlcpy(config.output1Friendlyname,"output1",sizeof(config.output1Friendlyname));
+  config.output1reverse = false;
+  strlcpy(config.output2Friendlyname,"output2",sizeof(config.output2Friendlyname));
+  config.output2reverse = false;
+  strlcpy(config.output3Friendlyname,"output2",sizeof(config.output3Friendlyname));
+  config.output3reverse = false;
+
   saveConfiguration(configFile, config);
 }
 
