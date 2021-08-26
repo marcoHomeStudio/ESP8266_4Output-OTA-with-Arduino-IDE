@@ -89,16 +89,14 @@ You can access the device setup by clicking on the Setup button on the main page
  - ***Network name of the device***: UNC name ex: esp8266-40utput
  - ***Device friendly name***: Device friendly name diplayed on the http interface
  - ***MQTT server***: Your mqtt server name or address
-
-***MQTT port***: Your MQTT port (TLS not yet supported)
-***MQTT user name***: Your MQTT username
-***MQTT password***: Your MQTT password
-***MQTT client id***:  Your MQTT client id
-***MQTT Publish topic***: Topic used by the device as publish channel 
-***MQTT Subscribe topic***: Topic used by the device as subscribe channel 
-***Output0 friendly name***: Friendly name display on the http interface
-***Reverse***: check box, Reverse mode of the GPIO 
-true: output is reverse "HIGH" to "LOW"
+ - ***MQTT port***: Your MQTT port (TLS not yet supported)
+ - ***MQTT user name***: Your MQTT username
+ - ***MQTT password***: Your MQTT password
+ - ***MQTT client id***:  Your MQTT client id
+ - ***MQTT Publish topic***: Topic used by the device as publish channel
+ - ***MQTT Subscribe topic***: Topic used by the device as subscribe channel 
+ - ***Output0 friendly name***: Friendly name display on the http interface
+ - ***Reverse***: check box, Reverse mode of the GPIO   true: output is reverse "HIGH" to "LOW"
 
 You can reset the module to Factory default by clicking on the button ***Reset to factory default***
 
@@ -218,7 +216,7 @@ g3NTYzMzBdfQ==
 
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk5MDgzMjEwMiwtMTc4Nzg5MDIyNyw2MT
+eyJoaXN0b3J5IjpbLTE2MTMzMzA5NCwtMTc4Nzg5MDIyNyw2MT
 MwNjQ4MDgsMjY3Mzg4OTU5LC0yMDc4OTgzNDQxLC0yMDg3NTYz
 MzBdfQ==
 -->
