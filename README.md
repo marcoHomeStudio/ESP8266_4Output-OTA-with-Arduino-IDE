@@ -120,18 +120,13 @@ You can access the device setup by clicking on the Setup button on the main page
 ***MQTT port***: Your MQTT port (TLS not yet supported)
 ***MQTT user name***: Your MQTT username
 ***MQTT password***: Your MQTT password
-MQTT client id: 
-MQTT Publish topic: Topic used by the device as publish channel 
-MQTT Subscribe topic: Topic used by the device as subscribe channel 
-Output0 friendly name: Friendly name diplay on the http interface
-Reverse: check box, Reverse mode of the GPIO
+***MQTT client id***:  Your MQTT client id
+***MQTT Publish topic***: Topic used by the device as publish channel 
+***MQTT Subscribe topic***: Topic used by the device as subscribe channel 
+***Output0 friendly name***: Friendly name display on the http interface
+***Reverse***: check box, Reverse mode of the GPIO 
+true: output is reverse "HIGH" to "LOW"
 
-
-the ***MQTT1 Publish topic*** and the ***mqtt1Topic2*** is used as subscribed channel.
-
-output0Friendlyname: from 0 to 3. friendly name diplay on the http interface
-
-output0reverse: from 0 to 3 select the gpio reverse mode
 true: output is reverse "HIGH" to "LOW"  
 
 You can reset the module to Factory default by clicking on the button ***Reset to factory default***
@@ -299,6 +294,6 @@ g3NTYzMzBdfQ==
 
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM1Nzg0NTAzNiw2MTMwNjQ4MDgsMjY3Mz
-g4OTU5LC0yMDc4OTgzNDQxLC0yMDg3NTYzMzBdfQ==
+eyJoaXN0b3J5IjpbMzI4ODI5NTQ1LDYxMzA2NDgwOCwyNjczOD
+g5NTksLTIwNzg5ODM0NDEsLTIwODc1NjMzMF19
 -->
