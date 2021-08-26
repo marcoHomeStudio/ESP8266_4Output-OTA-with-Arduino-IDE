@@ -127,7 +127,6 @@ You can access the device setup by clicking on the Setup button on the main page
 ***Reverse***: check box, Reverse mode of the GPIO 
 true: output is reverse "HIGH" to "LOW"
 
-true: output is reverse "HIGH" to "LOW"  
 
 You can reset the module to Factory default by clicking on the button ***Reset to factory default***
 
@@ -144,6 +143,8 @@ The MQTT flow is based on a json String formatted as follow:
 Where "output0" is connected to the Esp8266-01 module GPIO0 etc...
 
 "***output0***" value of the property represent the output state "*1"="ON" /"HIGH"* or *"0"="OFF"/"LOW"*
+id reverse is selected:
+
 
   
 
@@ -294,6 +295,6 @@ g3NTYzMzBdfQ==
 
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzI4ODI5NTQ1LDYxMzA2NDgwOCwyNjczOD
+eyJoaXN0b3J5IjpbNDE0NTg2NTc3LDYxMzA2NDgwOCwyNjczOD
 g5NTksLTIwNzg5ODM0NDEsLTIwODc1NjMzMF19
 -->
