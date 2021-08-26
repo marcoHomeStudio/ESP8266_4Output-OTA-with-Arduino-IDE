@@ -115,12 +115,12 @@ You can access the device setup by clicking on the Setup button on the main page
 ***Wifi access point SSID***: Your local wifi access point
 ***Wifi access point SSID***: Your wifi credential
 ***Network name of the device***: UNC name ex: esp8266-40utput
-***Device friendly name***: Device friendly nm
-MQTT server
-MQTT port
-MQTT user name
-MQTT password
-MQTT client id
+***Device friendly name***: Device friendly name diplayed on the http interface
+***MQTT server***: Your mqtt server name or address
+***MQTT port***: Your MQTT port (TLS not yet supported)
+***MQTT user name***: Your MQTT username
+***MQTT password***: Your MQTT password
+MQTT client id: 
 MQTT Publish topic: Topic used by the device as publish channel 
 MQTT Subscribe topic: Topic used by the device as subscribe channel 
 Output0 friendly name: Friendly name diplay on the http interface
@@ -299,6 +299,6 @@ g3NTYzMzBdfQ==
 
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgyMTU1MzMyMSw2MTMwNjQ4MDgsMjY3Mz
+eyJoaXN0b3J5IjpbMTM1Nzg0NTAzNiw2MTMwNjQ4MDgsMjY3Mz
 g4OTU5LC0yMDc4OTgzNDQxLC0yMDg3NTYzMzBdfQ==
 -->
