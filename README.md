@@ -111,8 +111,8 @@ You can access the device setup by clicking on the Setup button on the main page
 
   
 Http server username: is fix to admin
-Http server password
-Wifi access point SSID
+Http server password: webpage authentication password
+Wifi access point SSID: Your local w
 Wifi access point SSID
 Network name of the device
 Device friendly name
@@ -122,9 +122,9 @@ MQTT user name
 MQTT password
 MQTT client id
 MQTT Publish topic: Topic used by the device as publish channel 
-MQTT Subscribe topic Topic used by the device as subscribe channel 
-Output0 friendly name Friendly name diplay on the http interface
-Reverse
+MQTT Subscribe topic: Topic used by the device as subscribe channel 
+Output0 friendly name: Friendly name diplay on the http interface
+Reverse: check box, Reverse mode of the GPIO
 
 
 the ***MQTT1 Publish topic*** and the ***mqtt1Topic2*** is used as subscribed channel.
@@ -299,6 +299,6 @@ g3NTYzMzBdfQ==
 
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI3Njc5OTA3NSw2MTMwNjQ4MDgsMjY3Mz
-g4OTU5LC0yMDc4OTgzNDQxLC0yMDg3NTYzMzBdfQ==
+eyJoaXN0b3J5IjpbODczNzU1NTM5LDYxMzA2NDgwOCwyNjczOD
+g5NTksLTIwNzg5ODM0NDEsLTIwODc1NjMzMF19
 -->
