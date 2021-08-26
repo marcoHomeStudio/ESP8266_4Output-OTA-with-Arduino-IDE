@@ -210,10 +210,7 @@ I have try to use mDNS service to use the device with a .local name but i have v
 
 All the parameters are store in the file config.json store in the data partition.
 
-  
-
     {
-   
     "init":true,
     "APname":"Esp8266-4Output",
     "APkey":"123456789",
@@ -244,14 +241,11 @@ All the parameters are store in the file config.json store in the data partition
 
 The init field is selecting the device mode.
 
-  
-
 True= device initialization, the device is set in AP mode.
-
-  
 
 False= Device normal mode, the device start in wifi station mode and the device parameters are read and apply from the config.json file.
 
+output0Friendlyname from 0 to 3. friendly name diplay on the http interface
   
 
 # To do
@@ -291,6 +285,6 @@ g3NTYzMzBdfQ==
 
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEyMzcxOTQ1NywyNjczODg5NTksLTIwNz
-g5ODM0NDEsLTIwODc1NjMzMF19
+eyJoaXN0b3J5IjpbLTIwNTM3MjI1NTYsMjY3Mzg4OTU5LC0yMD
+c4OTgzNDQxLC0yMDg3NTYzMzBdfQ==
 -->
