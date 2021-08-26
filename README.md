@@ -248,7 +248,7 @@ False= Device normal mode, the device start in wifi station mode and the device 
 output0Friendlyname: from 0 to 3. friendly name diplay on the http interface
 
 output0reverse: from 0 to 3 select the gpio reverse mode
-true: output is reverse "HIGH to "LOW"
+true: output is reverse "HIGH" to "LOW"
   
 
 # To do
@@ -257,13 +257,9 @@ I will improve the following in the future.
 
 1. Implementing my own OTA interface to be able to automatically redirect to the Home page after successful update
 
-3. Pos sibility to choose a Friendly name for the output in the setup page.
+4. (maybe) implementing TLS connection for the MQTT broker
 
-4. Possibility to revert the output state 0 for HIGH" and 1 for "LOW"
-
-5. (ma ybe) implementing TLS connection for the MQTT broker
-
-6. (mae) implementing HTTPS connection for the internal webserver.
+3. (maybe) implementing HTTPS connection for the internal webserver.
 
   
 
@@ -288,6 +284,6 @@ g3NTYzMzBdfQ==
 
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMzQwNTczOTQsMjY3Mzg4OTU5LC0yMD
-c4OTgzNDQxLC0yMDg3NTYzMzBdfQ==
+eyJoaXN0b3J5IjpbNjEzMDY0ODA4LDI2NzM4ODk1OSwtMjA3OD
+k4MzQ0MSwtMjA4NzU2MzMwXX0=
 -->
