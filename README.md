@@ -11,19 +11,15 @@ Based on the popular esp8266-01 module ad arduino IDE,
 
 The idea is to make a programmable platform using the 4 gpio's as digital output/Input.
 
-It can be easily connected to any module like 4 relay module boards or anything needed to be driven by digital output
+It can be easily connected to any module like 4 relay module boards or anything needed to be driven by digital output.
 
 The device can publish and subscribe to an MQTT broker to allow remote control of the module.
-
-  
 
 Async web server and async web socket have been implemented as device dashboard and AsyncElegantOTA to upload the firmware and the FS data folder.
 
 A config.json file is stored in the data folder for the device parameter.
 
 The web server html and css and js file are stored in the Data directory.
-
-  
 
 ## Installation
 
@@ -39,8 +35,6 @@ Upload the ***data*** folder with the ***[ESP8266 Little FS data upload](https:/
 
 The following libraries must be installed:
 
-  
-
 -  [ESPAsyncTCP](https://github.com/me-no-dev/ESPAsyncTCP)
 
 -  [ESPAsyncWebServer](https://github.com/me-no-dev/ESPAsyncWebServer)
@@ -53,19 +47,13 @@ The following libraries must be installed:
 
 -  [Pub sub client Nick O'Leary](https://github.com/knolleary/pubsubclient)
 
-  
-
 # running the first time
 
 When you power the device just after having uploaded the data folder the config.json file put the module in init=true state. That mean that the module bootup as an access point.
 
 The access point name is by default ***Esp8266-4Output*** and the password is ***123456789*** you can modify this value to your taste by modifying the file /data/config.json
 
-  
-
 ![init](./Doc/init.png)
-
-  
 
 The username ***admin*** and the password ***12345*** are the default credential for the http authentication. You can't change the username but you can modify the password.
 
@@ -73,19 +61,11 @@ ESPHostname is the UNC name your device is going to be shown on your network.
 
 Once you click on ***Save config*** button, the device wil reboot and switch in Wifi workstation.
 
-  
-
 # Electrical diagram
-
-  
 
 ![schematic](./Doc/Esp8266-01_4Outputfzz_schem.png)
 
-  
-
 ![Breadboard](./Doc/Esp8266-01_4Outputfzz_bb.png)
-
-  
 
 # Factory reset
 
@@ -95,18 +75,11 @@ When the device boot up, is first setting the GPIO3 as input and GPIO1 as output
 
 To factory rest the module, simply press the Factory resest button before powering up the device or press the reset button. The blue led should start to blink to inform you that the module as been rest to its default value. You just need to reset again to start the init process.
 
-  
-
 # Device setup
-
-  
 
 You can access the device setup by clicking on the Setup button on the main page.
 
-  
-
 ![Setup](./Doc/setup.png)
-
   
 ***Http server username***: is fix to admin
 ***Http server password***: webpage authentication password
@@ -287,6 +260,6 @@ g3NTYzMzBdfQ==
 
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjQ5NjQzMDQyLDYxMzA2NDgwOCwyNjczOD
+eyJoaXN0b3J5IjpbMTE5OTUzMzY4LDYxMzA2NDgwOCwyNjczOD
 g5NTksLTIwNzg5ODM0NDEsLTIwODc1NjMzMF19
 -->
