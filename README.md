@@ -121,13 +121,13 @@ MQTT port
 MQTT user name
 MQTT password
 MQTT client id
-MQTT Publish topic
-MQTT Subscribe topic
-Output0 friendly name
+MQTT Publish topic: Topic used by the device as publish channel 
+MQTT Subscribe topic Topic used by the device as subscribe channel 
+Output0 friendly name Friendly name diplay on the http interface
 Reverse
 
 
-the ***MQTT1 Publish topic*** is used by the device as publish channel and the ***mqtt1Topic2*** is used as subscribed channel.
+the ***MQTT1 Publish topic*** and the ***mqtt1Topic2*** is used as subscribed channel.
 
 output0Friendlyname: from 0 to 3. friendly name diplay on the http interface
 
@@ -299,6 +299,6 @@ g3NTYzMzBdfQ==
 
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAyOTk4MTY3Nyw2MTMwNjQ4MDgsMjY3Mz
+eyJoaXN0b3J5IjpbLTI3Njc5OTA3NSw2MTMwNjQ4MDgsMjY3Mz
 g4OTU5LC0yMDc4OTgzNDQxLC0yMDg3NTYzMzBdfQ==
 -->
