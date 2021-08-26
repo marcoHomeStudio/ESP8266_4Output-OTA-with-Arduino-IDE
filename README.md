@@ -11,9 +11,7 @@ Based on the popular esp8266-01 module ad arduino IDE,
 
 The idea is to make a programmable platform using the 4 gpio's as digital output/Input.
 
-It can be easily connected to any module like 4 relay module boards or anything needed to be driven by digital output.
-
-  
+It can be easily connected to any module like 4 relay module boards or anything needed to be driven by digital output
 
 The device can publish and subscribe to an MQTT broker to allow remote control of the module.
 
@@ -146,11 +144,9 @@ if reverse is selected:
 
 The module is publishing the output state via the json string formatted above on the ***MQTT Publish topic*** every time any state of the 4 output is modified either by the web interface or via the MQTT subscribed channel.
 
-  
-
 It publishes the output state during startup, when the http default page have been open and on 1 minute regular bases.
 
-The module listen to the mqtt1Topic2 and is expecting the Json string as formatted above. It changes the output state according to the Json string.
+The module listen to the ***MQTT Subscribe topic*** and is expecting the Json string formatted as described above. It changes the output state according to the Json string.
 
 # Upgrading the firmware
 
@@ -291,6 +287,6 @@ g3NTYzMzBdfQ==
 
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzODQyNDExMDIsNjEzMDY0ODA4LDI2Nz
-M4ODk1OSwtMjA3ODk4MzQ0MSwtMjA4NzU2MzMwXX0=
+eyJoaXN0b3J5IjpbMjQ5NjQzMDQyLDYxMzA2NDgwOCwyNjczOD
+g5NTksLTIwNzg5ODM0NDEsLTIwODc1NjMzMF19
 -->
