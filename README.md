@@ -212,57 +212,33 @@ All the parameters are store in the file config.json store in the data partition
 
   
 
-{
-
-"init":true,
-
-"APname":"Esp8266-4Output",
-
-"APkey":"123456789",
-
-"ESPhostname":"<YOUR  HOSTNAME>",
-
-"friendlyName":"<YOUR  FRIENDLY  NAME>",
-
-"SSID":"<YOUR  AP",
-
-"wifikey":"<YOURWIFIKEY>",
-
-"username":"admin",
-
-"password":"12345",
-
-"mqtt1Server":"<YOUR  MQTT  SERVER>",
-
-"mqtt1Port":1883,
-
-"mqtt1User" : "<YOUR  MQTT  USER>",
-
-"mqtt1Password":"<YOUR  MQTT  PASSWORD",
-
-"mqtt1ClientId":"<YOUR  MQT  TCLIENT  ID>",
-
-"mqtt1Topic1":"<MQTT  PUBLISH  TOPIC>",
-
-"mqtt1Topic2":"<MQTT  SUBSCRIBE  TOPIC>",
-
-"output0Friendlyname":"output0",
-
-"output1Friendlyname":"output1",
-
-"output2Friendlyname":"output2",
-
-"output3Friendlyname":"output3",
-
-"output0reverse":false,
-
-"output1reverse":false,
-
-"output2reverse":false,
-
-"output3reverse":false
-
-}
+    {
+   
+    "init":true,
+    "APname":"Esp8266-4Output",
+    "APkey":"123456789",
+    "ESPhostname":"<YOUR  HOSTNAME>",
+    "friendlyName":"<YOUR  FRIENDLY  NAME>",
+    "SSID":"<YOUR  AP",
+    "wifikey":"<YOURWIFIKEY>",
+    "username":"admin",
+    "password":"12345",
+    "mqtt1Server":"<YOUR  MQTT  SERVER>",
+    "mqtt1Port":1883,
+    "mqtt1User" : "<YOUR  MQTT  USER>",
+    "mqtt1Password":"<YOUR  MQTT  PASSWORD",
+    "mqtt1ClientId":"<YOUR  MQT  TCLIENT  ID>",
+    "mqtt1Topic1":"<MQTT  PUBLISH  TOPIC>",
+    "mqtt1Topic2":"<MQTT  SUBSCRIBE  TOPIC>",
+    "output0Friendlyname":"output0",
+    "output1Friendlyname":"output1",
+    "output2Friendlyname":"output2",
+    "output3Friendlyname":"output3",
+    "output0reverse":false,
+    "output1reverse":false,
+    "output2reverse":false,
+    "output3reverse":false
+    }
 
   
 
@@ -315,6 +291,6 @@ g3NTYzMzBdfQ==
 
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MzE0MjI3MzUsMjY3Mzg4OTU5LC0yMD
-c4OTgzNDQxLC0yMDg3NTYzMzBdfQ==
+eyJoaXN0b3J5IjpbMTEyMzcxOTQ1NywyNjczODg5NTksLTIwNz
+g5ODM0NDEsLTIwODc1NjMzMF19
 -->
