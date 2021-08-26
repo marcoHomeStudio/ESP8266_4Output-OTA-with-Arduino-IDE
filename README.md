@@ -117,8 +117,11 @@ Wifi access point SSID
 Network name of the device
 Device friendly name
 MQTT server
-
-mqtt1User, mqtt1Password, mqtt1ClientId, mqtt1Topic1, mqtt1Topic2 are the parameters needed to connect to your MQTT Broker.
+MQTT port
+MQTT1 user name
+MQTT1 password
+MQTT1 client id
+MQTT1 Publish topic
 
 the ***mqtt1Topic1*** is used by the device as publish channel and the ***mqtt1Topic2*** is used as subscribed channel.
 
@@ -292,6 +295,6 @@ g3NTYzMzBdfQ==
 
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwOTIzNzMzNyw2MTMwNjQ4MDgsMjY3Mz
+eyJoaXN0b3J5IjpbMTA4MTA5Mjk1Nyw2MTMwNjQ4MDgsMjY3Mz
 g4OTU5LC0yMDc4OTgzNDQxLC0yMDg3NTYzMzBdfQ==
 -->
