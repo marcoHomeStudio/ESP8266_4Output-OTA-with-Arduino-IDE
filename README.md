@@ -117,7 +117,10 @@ mqtt1User, mqtt1Password, mqtt1ClientId, mqtt1Topic1, mqtt1Topic2 are the parame
 
 the ***mqtt1Topic1*** is used by the device as publish channel and the ***mqtt1Topic2*** is used as subscribed channel.
 
-  
+output0Friendlyname: from 0 to 3. friendly name diplay on the http interface
+
+output0reverse: from 0 to 3 select the gpio reverse mode
+true: output is reverse "HIGH" to "LOW"  
 
 You can reset the module to Factory default by clicking on the button ***Reset to factory default***
 
@@ -284,6 +287,6 @@ g3NTYzMzBdfQ==
 
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjEzMDY0ODA4LDI2NzM4ODk1OSwtMjA3OD
-k4MzQ0MSwtMjA4NzU2MzMwXX0=
+eyJoaXN0b3J5IjpbODk5Njg2MjE1LDYxMzA2NDgwOCwyNjczOD
+g5NTksLTIwNzg5ODM0NDEsLTIwODc1NjMzMF19
 -->
