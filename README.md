@@ -198,26 +198,15 @@ true: output is reverse "HIGH" to "LOW"
 I will improve the following in the future.
 
 1. Implementing my own OTA interface to be able to automatically redirect to the Home page after successful update
-2. 
-
+2. Adding MQTT port in the setup form
 3. (maybe) implementing TLS connection for the MQTT broker
-
 4. (maybe) implementing HTTPS connection for the internal webserver.
-
-  
 
 # Alternate Diagram The 4 channel relay Module
 
-  
-
 ![4chrelayModuleSchematic](./Doc/Esp8266-01_4RelayBoard_schem.png)
 
-  
-
 ![4chrelayModuleSchematicBreadboard](./Doc/Esp8266-01_4RelayBoard_bb.png)
-
-  
-  
 
 <!--stackedit_data:
 
@@ -227,6 +216,6 @@ g3NTYzMzBdfQ==
 
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg4MTAyNjA0MCw2MTMwNjQ4MDgsMjY3Mz
-g4OTU5LC0yMDc4OTgzNDQxLC0yMDg3NTYzMzBdfQ==
+eyJoaXN0b3J5IjpbLTE3ODc4OTAyMjcsNjEzMDY0ODA4LDI2Nz
+M4ODk1OSwtMjA3ODk4MzQ0MSwtMjA4NzU2MzMwXX0=
 -->
