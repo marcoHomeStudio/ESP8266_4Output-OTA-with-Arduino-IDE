@@ -81,13 +81,15 @@ You can access the device setup by clicking on the Setup button on the main page
 
 ![Setup](./Doc/setup.png)
   
-***Http server username***: is fix to admin
-***Http server password***: webpage authentication password
-***Wifi access point SSID***: Your local wifi access point
-***Wifi access point SSID***: Your wifi credential
-***Network name of the device***: UNC name ex: esp8266-40utput
-***Device friendly name***: Device friendly name diplayed on the http interface
-***MQTT server***: Your mqtt server name or address
+
+ - ***Http server username***: is fix to admin
+ - ***Http server password***: webpage authentication password
+ - ***Wifi access point SSID***: Your local wifi access point
+ - ***Wifi access point SSID***: Your wifi credential
+ - ***Network name of the device***: UNC name ex: esp8266-40utput
+ - ***Device friendly name***: Device friendly name diplayed on the http interface
+ - ***MQTT server***: Your mqtt server name or address
+
 ***MQTT port***: Your MQTT port (TLS not yet supported)
 ***MQTT user name***: Your MQTT username
 ***MQTT password***: Your MQTT password
@@ -216,6 +218,7 @@ g3NTYzMzBdfQ==
 
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3ODc4OTAyMjcsNjEzMDY0ODA4LDI2Nz
-M4ODk1OSwtMjA3ODk4MzQ0MSwtMjA4NzU2MzMwXX0=
+eyJoaXN0b3J5IjpbMTk5MDgzMjEwMiwtMTc4Nzg5MDIyNyw2MT
+MwNjQ4MDgsMjY3Mzg4OTU5LC0yMDc4OTgzNDQxLC0yMDg3NTYz
+MzBdfQ==
 -->
