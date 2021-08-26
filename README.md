@@ -98,10 +98,7 @@ You can access the device setup by clicking on the Setup button on the main page
 ***Reverse***: check box, Reverse mode of the GPIO 
 true: output is reverse "HIGH" to "LOW"
 
-
 You can reset the module to Factory default by clicking on the button ***Reset to factory default***
-
-  
 
 # MQTT flow
 
@@ -125,62 +122,34 @@ The module listen to the ***MQTT Subscribe topic*** and is expecting the Json st
 
 You can upgrade the firmware by clicking on the ***Upgrade firmware*** button either from the main page or form the setup page.
 
-  
-
 The module is using the beautifully made code form [AsyncElegantOTA](https://github.com/ayushsharma82/AsyncElegantOTA)
-
-  
 
 ![OTA](./Doc/OTA.png)
 
-  
-
 OTA (On The Air) is an Espressif SDK to allow you to upload the firmware or the Data partition from a WIFI connection.
-
-  
 
 Select the radio button Firmware or File system. Choose the bin file accordingly.
 
-  
-
 Once the bin file has been updated the device will reboot and the OTA page show you a green text "Success" and a Back Button.
 
-  
-
 To go back to your home page you'll have to type it in your browser address bar.
-
-  
 
 To create the sketch bin file to be uploaded as firmware, go to the menu ***Sketch/Export compiled binary*** in your arduino IDE,
 
 The arduino IDE will compile the sketch and store it as bin file inside your arduino sketch folder.
 
-  
-
 To create the bin file to be uploaded as filesystem without the module connected via USB go to the menu T***ools/ESP8266 LittleFS data upload*** Some error are going to be split out on the monitor, that is perfectly normal browse up in the monitor window to find a line looking like that:
 
 [LittleFS] upload : ***C:\Users\***YOURUSERNAME***\AppData\Local\Temp\******arduino_build_635734***/***ESP8266_4output_OTA.mklittlefs.bin***
 
-  
-
 browse to this folder and copy the bin file into your arduino sketch folder.
-
-  
-  
 
 # Networking consideration
 
 The code assume that you are using a DHCCP server on your main router on your network and expect to have an IP address automatically delivered by the DHCP server.
-
-  
-
 The Host name should be automatically read by you router. If you can't reach your device by its hostname you should connect to your main router and look for any new IP address given by the DHCP service.
 
-  
-
 I have try to use mDNS service to use the device with a .local name but i have very unreliable and mitigated result with the ESP8266 MCU. It seem to work better with ESP32 MCU.
-
-  
 
 # config.json file
 
@@ -213,8 +182,6 @@ All the parameters are store in the file config.json store in the data partition
     "output3reverse":false
     }
 
-  
-
 The init field is selecting the device mode.
 
 True= device initialization, the device is set in AP mode.
@@ -226,16 +193,16 @@ output0Friendlyname: from 0 to 3. friendly name diplay on the http interface
 output0reverse: from 0 to 3 select the gpio reverse mode
 true: output is reverse "HIGH" to "LOW"
   
-
 # To do
 
 I will improve the following in the future.
 
 1. Implementing my own OTA interface to be able to automatically redirect to the Home page after successful update
+2. 
 
-4. (maybe) implementing TLS connection for the MQTT broker
+3. (maybe) implementing TLS connection for the MQTT broker
 
-3. (maybe) implementing HTTPS connection for the internal webserver.
+4. (maybe) implementing HTTPS connection for the internal webserver.
 
   
 
@@ -260,6 +227,6 @@ g3NTYzMzBdfQ==
 
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE5OTUzMzY4LDYxMzA2NDgwOCwyNjczOD
-g5NTksLTIwNzg5ODM0NDEsLTIwODc1NjMzMF19
+eyJoaXN0b3J5IjpbMTg4MTAyNjA0MCw2MTMwNjQ4MDgsMjY3Mz
+g4OTU5LC0yMDc4OTgzNDQxLC0yMDg3NTYzMzBdfQ==
 -->
