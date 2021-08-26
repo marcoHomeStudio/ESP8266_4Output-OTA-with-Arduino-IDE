@@ -110,7 +110,10 @@ You can access the device setup by clicking on the Setup button on the main page
 ![Setup](./Doc/setup.png)
 
   
-
+Http server username: is fix to admin
+Http server password
+Wifi access point SSID
+Wifi access point SSID
 The Friendly name is the device name displayed on the main page
 
 mqtt1User, mqtt1Password, mqtt1ClientId, mqtt1Topic1, mqtt1Topic2 are the parameters needed to connect to your MQTT Broker.
@@ -287,6 +290,6 @@ g3NTYzMzBdfQ==
 
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODk5Njg2MjE1LDYxMzA2NDgwOCwyNjczOD
-g5NTksLTIwNzg5ODM0NDEsLTIwODc1NjMzMF19
+eyJoaXN0b3J5IjpbMTE0NDEyNjEwNyw2MTMwNjQ4MDgsMjY3Mz
+g4OTU5LC0yMDc4OTgzNDQxLC0yMDg3NTYzMzBdfQ==
 -->
