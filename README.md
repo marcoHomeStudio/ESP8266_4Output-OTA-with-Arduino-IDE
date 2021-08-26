@@ -245,7 +245,10 @@ True= device initialization, the device is set in AP mode.
 
 False= Device normal mode, the device start in wifi station mode and the device parameters are read and apply from the config.json file.
 
-output0Friendlyname from 0 to 3. friendly name diplay on the http interface
+output0Friendlyname: from 0 to 3. friendly name diplay on the http interface
+
+output0reverse: from 0 to 3 select the gpio reverse mode
+true: output is reverse "HIGH to "LOW"
   
 
 # To do
@@ -285,6 +288,6 @@ g3NTYzMzBdfQ==
 
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNTM3MjI1NTYsMjY3Mzg4OTU5LC0yMD
+eyJoaXN0b3J5IjpbLTEzMzQwNTczOTQsMjY3Mzg4OTU5LC0yMD
 c4OTgzNDQxLC0yMDg3NTYzMzBdfQ==
 -->
