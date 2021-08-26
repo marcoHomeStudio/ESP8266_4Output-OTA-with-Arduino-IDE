@@ -136,19 +136,15 @@ You can reset the module to Factory default by clicking on the button ***Reset t
 
 The MQTT flow is based on a json String formatted as follow:
 
-  
-
 ***{"output0":"0","output1":"0","output2":"1","output3":"0"}***
 
 Where "output0" is connected to the Esp8266-01 module GPIO0 etc...
 
 "***output0***" value of the property represent the output state "*1"="ON" /"HIGH"* or *"0"="OFF"/"LOW"*
-id reverse is selected:
+if reverse is selected:
+"*0"="ON" /"HIGH"* or *"1"="OFF"/"LOW"*
 
-
-  
-
-The module is publishing the output state via the json string formatted above on the mqtt1Topic1 every time any state of the 4 output is modified either by the web interface or via the MQTT subscribed channel.
+The module is publishing the output state via the json string formatted above on the ***MQTT Publish topic*** every time any state of the 4 output is modified either by the web interface or via the MQTT subscribed channel.
 
   
 
@@ -295,6 +291,6 @@ g3NTYzMzBdfQ==
 
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDE0NTg2NTc3LDYxMzA2NDgwOCwyNjczOD
-g5NTksLTIwNzg5ODM0NDEsLTIwODc1NjMzMF19
+eyJoaXN0b3J5IjpbLTEzODQyNDExMDIsNjEzMDY0ODA4LDI2Nz
+M4ODk1OSwtMjA3ODk4MzQ0MSwtMjA4NzU2MzMwXX0=
 -->
